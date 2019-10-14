@@ -7,10 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
+
 </head>
 
 <body>
     <div class="overflow normal">
+        <button id="hiddenButton" onclick="GoInFullscreen(document.documentElement)">full screen</button>
         <input type="text" id="nome">
         <input type="submit" id="submit" value="Inizia">
     </div>
@@ -43,6 +45,30 @@
     <script src="getName.js"></script>
     <script src="changeSrc.js"></script>
     <script src="funzionalitàPlayer.js"></script>
+    <script defer type="text/javascript">
+
+        function GoInFullscreen(element) {
+            if (element.requestFullscreen)
+                element.requestFullscreen();
+            else if (element.mozRequestFullScreen)
+                element.mozRequestFullScreen();
+            else if (element.webkitRequestFullscreen)
+                element.webkitRequestFullscreen();
+            else if (element.msRequestFullscreen)
+                element.msRequestFullscreen();
+        }
+        var simulateClick = function (elem) {
+            // Create our event (with options)
+            var evt = new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            });
+            // If cancelled, don't dispatch our event
+            var canceled = !elem.dispatchEvent(evt);
+        };
+        simulateClick(document.getElementById('hiddenButton'));
+    </script>
 </body>
 
 </html>
