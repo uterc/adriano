@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="overflow normal">
+        <input type="text" id="nome">
+        <input type="submit" id="submit" value="Inizia">
+    </div>
+    <div class="main">
+
+        <video id="video" data-name="Ritorno al futuro - Flusso canalizzatore.mp4"
+            src="Ritorno al futuro - Flusso canalizzatore.mp4"></video>
+        <div class="button-container">
+            <button id="play">play</button>
+            <button id="stop">stop</button>
+            <button id="rec">rec</button>
+            <button id="save">save</button>
+        </div>
+
+        <div class="playlist">
+            <ul>
+                <li class="videoSrc" data-href="vid.mp4">video1</li>
+                <li class="videoSrc" data-href="vid2.mp4">video2</li>
+            </ul>
+        </div>
+    </div>
+    <p>il tuo nome e :
+        <span id="show-name"></span>
+    </p>
+    <p>non sei tu?</p>
+    <button id="cambia-nome">Cambia Nome</button>
+    <button id="riavia">Riavia programma</button>
+
+
+    <script src="getName.js"></script>
+    <script src="changeSrc.js"></script>
+    <script src="funzionalitàPlayer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.main {
+  z-index: 1;
+}
+video {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  text-align: center;
+}
+.overflow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  z-index: 2;
+  transition: all 400ms;
+  /* display: none; */
+}
+
+.scale {
+  transform: scale(0);
+}
+.normal {
+  transform: scale(1);
+}
