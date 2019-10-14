@@ -61,6 +61,6 @@ video {
 .normal {
   transform: scale(1);
 }
-#hiddenButton {
+/* #hiddenButton {
   display: none;
-}
+} */

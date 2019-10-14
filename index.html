@@ -7,12 +7,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
+    <script type="text/javascript">
+        hButton = document.getElementById('hiddenButton')
+        function GoInFullscreen(element) {
+            if (element.requestFullscreen)
+                element.requestFullscreen();
+            else if (element.mozRequestFullScreen)
+                element.mozRequestFullScreen();
+            else if (element.webkitRequestFullscreen)
+                element.webkitRequestFullscreen();
+            else if (element.msRequestFullscreen)
+                element.msRequestFullscreen();
+        }
+        function closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { /* Firefox */
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE/Edge */
+                document.msExitFullscreen();
+            }
+        }
+    </script>
 
 </head>
 
 <body>
     <div class="overflow normal">
-        <button id="hiddenButton" onclick="GoInFullscreen(document.documentElement)">full screen</button>
+        <button id="hiddenButton" onclick="GoInFullscreen(document.documentElement)">enter Fullscreen</button>
+        <button id="hiddenButton" onclick="closeFullscreen()">exit Fullscreen</button>
         <input type="text" id="nome">
         <input type="submit" id="submit" value="Inizia">
     </div>
@@ -40,35 +65,11 @@
     <p>non sei tu?</p>
     <button id="cambia-nome">Cambia Nome</button>
     <button id="riavia">Riavia programma</button>
+    <script defer src="getName.js"></script>
+    <script defer src="changeSrc.js"></script>
+    <script defer src="funzionalitàPlayer.js"></script>
 
 
-    <script src="getName.js"></script>
-    <script src="changeSrc.js"></script>
-    <script src="funzionalitàPlayer.js"></script>
-    <script defer type="text/javascript">
-
-        function GoInFullscreen(element) {
-            if (element.requestFullscreen)
-                element.requestFullscreen();
-            else if (element.mozRequestFullScreen)
-                element.mozRequestFullScreen();
-            else if (element.webkitRequestFullscreen)
-                element.webkitRequestFullscreen();
-            else if (element.msRequestFullscreen)
-                element.msRequestFullscreen();
-        }
-        var simulateClick = function (elem) {
-            // Create our event (with options)
-            var evt = new MouseEvent('click', {
-                bubbles: true,
-                cancelable: true,
-                view: window
-            });
-            // If cancelled, don't dispatch our event
-            var canceled = !elem.dispatchEvent(evt);
-        };
-        simulateClick(document.getElementById('hiddenButton'));
-    </script>
 </body>
 
 </html>
