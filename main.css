@@ -10,7 +10,7 @@ body {
   z-index: 1;
 }
 video {
-  width: 100%;
+  width: 50%;
   height: auto;
   display: inline-block;
   text-align: center;
